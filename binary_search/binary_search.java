@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 //  Binary Search
 
 // Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.
@@ -60,5 +62,28 @@ public class binary_search{
         }else{
             System.out.println("Element is found at index: "+result);  
         }  
+    }
+
+    public static int distance_value_btn_two_arr(int arr1[],int arr2[],int d){
+        Arrays.sort(arr2);
+        int res = arr1.length;
+        for(int num: arr1){
+            int left = 0;
+            int right = arr2.length - 1;
+            while(left<=right){
+                int mid = left + (right-left)/2;
+                
+                if(Math.abs(num - arr2[mid])<=d){
+                    res--;
+                    break;
+                }else if(num<arr2[mid]){
+                    right = mid - 1;
+                }else{
+                    left = mid + 1;
+                }
+            }
+        }
+        return res;
+        
     }
 }
