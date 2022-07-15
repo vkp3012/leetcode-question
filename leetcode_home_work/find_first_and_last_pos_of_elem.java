@@ -39,6 +39,7 @@
 
 
 public class find_first_and_last_pos_of_elem{
+    
     public static int[] searchRange(int[] nums, int target) {
         int start = findFirstOccurenceIndex(nums, target);
         int end = findLastOccurenceIndex(nums, target);
